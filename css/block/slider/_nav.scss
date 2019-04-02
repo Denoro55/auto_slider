@@ -1,0 +1,102 @@
+$link_red: #b30033;
+
+.history-nav {
+	display: flex;
+	z-index: 10;
+	position: relative;
+	
+	&__link {
+		display: block;
+		width: 58px;
+	    height: 58px;
+	    line-height: 58px;
+	    text-align: center;
+	    background-color: #f0f0f0;
+	    &:before {
+	    	content: "a";
+	    	font-family: $font_suzuki_icon;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: 400;
+			text-transform: none;
+			text-align: center;
+			display: inline-block;
+			color: #0e4fa1;
+	    }
+	    &:hover {
+	    	background-color: #00334d;
+	    	&:before {
+	    		color: #fff;
+	    	}
+	    }
+	}
+
+	&__next {
+		a {
+			&:before {
+				content: 't';
+			}
+		}
+	}
+
+	&__wrapper {
+		flex: 1;
+		min-width: 0;
+		padding: 0 20px;
+	}
+
+	&__pager {
+		width: 100%;
+		overflow: hidden;
+	}
+}
+
+.bx-pager {
+	transition: all 1s;
+	position: relative;
+	display: flex;
+	height: 58px;
+	border-bottom: 5px solid #f0f0f0;
+
+	&__year {
+		position: absolute;
+		top: -2px;
+		color: #808080;
+		font-size: 18px;
+		font-family: $font_suzuki;
+	}
+
+	&__item {
+		position: relative;
+		height: 58px;
+		min-width: 20px;
+		flex-shrink: 0;
+	}
+
+	&__item.active {
+		border-bottom: 5px solid $link_red;
+		.bx-pager__year {
+			color: #00334d;
+		}
+	}
+
+	&__link {
+		background: #d7d7d7;
+		border: none;
+		width: 12px;
+		height: 12px;
+		display: block;
+		border-radius: 50%;
+		position: absolute;
+		top: 24px;
+		text-indent: -9999px;
+		z-index: 10;
+		&:hover {
+			background: $link_red;
+		}
+	}
+
+	&__link-active {
+		background: $link_red;
+	}
+}

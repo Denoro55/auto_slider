@@ -1,0 +1,169 @@
+.slideshow-btn {
+	color: #333;
+    font-size: 14px;
+    line-height: 15px;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&__icon {
+		display: block;
+	    width: 13px;
+	    height: 13px;
+	    float: left;
+	    margin-right: 5px;
+	    background: url('../img/icon.png') no-repeat 0 0;
+	}
+
+	&__off {
+		display: none;
+	}
+}
+
+.slideshow-active {
+	.slideshow-btn__off {
+		display: inline-block;
+	}
+
+	.slideshow-btn__on {
+		display: none;
+	}
+}
+
+.slider {
+	&__title {
+		font-size: 40px;
+		color: #00374d;
+		@include tablet {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		text-transform: uppercase;
+		margin-bottom: 18px;
+		font-family: $font_suzuki;
+		@include tablet {
+			display: block;
+		}
+	}
+
+	&__slideshow {
+		margin-left: auto;
+		@include tablet {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	@include tablet {
+		margin-bottom: 20px;
+	}
+}
+
+.history-slider {
+	position: relative;
+	min-height: 100px;
+	margin-bottom: 25px;
+	min-height: 500px;
+
+	@include tablet {
+		min-height: inherit;
+	}
+
+	&__info {
+		width: 368px;
+		padding: 20px 60px 20px 40px;
+		background: url('https://suzuki-motor.ru/media/img/history_slide_info.jpg');
+		@include tablet{
+			margin: 0 auto;
+			margin-top: 20px;
+			max-width: 100%;
+			padding: 20px;
+		}
+	}
+
+	&__item {
+		transition: all .5s;
+		position: absolute;
+		opacity: 0;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+	}
+
+	&__wrapper {
+		display: flex;
+		min-height: 500px;
+		@include tablet {
+			display: block;
+			min-height: inherit;
+		}
+	}
+
+	&__item-active {
+		opacity: 1;
+		display: block;
+		z-index: 1;
+		position: relative !important;
+	}
+
+	&__cover {
+		display: flex;
+		align-items: center;
+		flex: 1;
+		min-width: 0;
+		img {
+			width: 100%;
+			max-height: 500px;
+			max-width: 100%;
+    		user-select: none;
+		}
+	}
+
+	&__year {
+		font-size: 80px;
+		color: #b30033;
+		font-family: $font_suzuki;
+		line-height: 80px;
+		margin-bottom: 10px;
+	}
+
+	p {
+		font-size: 14px;
+		text-transform: none;
+		margin: 0 0 18px;
+		line-height: 18px;
+	}
+}
+
+.slider-main {
+	max-width: 1152px;
+	margin: 0 auto;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+}
+
+.bx-wrapper{
+	overflow: hidden;
+
+	&__controls {
+		display: none;
+	}
+}

@@ -1,0 +1,94 @@
+// @import '../font/ToyotaText/toyotatext';
+// @import '../font/ToyotaDisplay/toyotadisplay';
+// @import '../font/PTSans/ptsans';
+
+@import '../font/Suzuki/suzuki';
+
+$color_red: #e50000;
+$color_metal: #333333;
+
+$font_suzuki: 'SuzukiPROHeadline' , Arial, sans-serif;
+$font_suzuki_icon: 'Suzuki-icon' , Arial, sans-serif;
+
+@mixin font() {
+	font-family: 'Mister', Arial, sans-serif;
+}
+
+@mixin PTbold() {
+	font-family: 'PT_Sans-Web-Bold', Arial, sans-serif;
+}
+
+@mixin ToyotaText() {
+	font-family: 'ToyotaText-Regular', Arial, sans-serif;
+}
+
+@mixin ToyotaTextBold() {
+	font-family: 'ToyotaText-Bold', Arial, sans-serif;
+}
+
+@mixin ToyotaDisplay() {
+	font-family: 'ToyotaDisplay-Regular', Arial, sans-serif;
+}
+
+@mixin ToyotaDisplayBold() {
+	font-family: 'ToyotaDisplay-Bold', Arial, sans-serif;
+}
+
+body {
+	// @include ToyotaText();
+	color: $color_metal;
+	font-family: 'Arial' , sans-serif;
+}
+
+.wrapper {
+	width: 100%;
+	overflow-x: hidden;
+	position: relative;
+	padding: 30px 0;
+}
+
+%clearfix {
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+@mixin pc() {
+	@media screen and (max-width: 1240px) {
+		@content;
+	}
+}
+
+@mixin tablet() {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin mini-tablet() {
+	@media screen and (max-width: 600px) {
+		@content;
+	}
+}
+
+@mixin phones() {
+	@media screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+.container {
+	margin: 0 auto;
+	width: 1200px;
+	box-sizing: border-box;
+	@extend %clearfix;
+	@include pc {
+		width: 768px;
+		padding: 0 20px;
+	}
+	@include tablet {
+		width: 100%;
+	}
+}
